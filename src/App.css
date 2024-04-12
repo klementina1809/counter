@@ -53,7 +53,7 @@ form {
 	font-size: 18px;
 	color: rgb(15, 15, 15);
 	font-weight: 700;
-  pointer-events: none !important;
+	pointer-events: none !important;
 }
 
 .chip img {
@@ -62,7 +62,39 @@ form {
 }
 .user {
 	display: flex;
+	flex-direction: row;
 	align-items: center !important;
-  margin: auto;
-  cursor: pointer;
+	margin: auto;
+	cursor: pointer;
+}
+
+@media only screen and (max-width: 768px) {
+	* {
+		font-size: 34px !important;
+	}
+	.form {
+		flex-direction: column;
+		max-width: 760px;
+	}
+	.form button {
+		min-width: auto !important;
+	}
+	.chips {
+		width: auto;
+	}
+}
+
+@media only screen and (max-width: 480px) {
+	.chip {
+		width: 90px; /* Уменьшаем размер чипов на маленьких экранах */
+	}
+	.chips {
+		gap: 8px;
+	}
+	.chip::after {
+		font-size: 20px; /* Уменьшаем размер текста значений на чипах */
+	}
+	.chip img {
+		width: 90px; /* Уменьшаем размер изображений на чипах */
+	}
 }

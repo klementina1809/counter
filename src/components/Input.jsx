@@ -1,10 +1,9 @@
 import React from "react";
 
-
 function Input({ value, onChange }) {
 	return (
 		<div className="form">
-			<label>New user</label>
+			{/* <label>New user</label> */}
 			<input
 				placeholder="Inserisci il nome"
 				type="text"

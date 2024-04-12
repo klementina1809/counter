@@ -95,21 +95,21 @@ function App() {
 				))}
 			</div>
 			<div className="chips my-8">
-				<div className="chip" data-value="0.5">
+				<div className="chip" data-value="+0.5">
 					<img
 						src="./img/10.png"
 						alt=""
 						onClick={() => handleAddMoney(0.5)}
 					/>
 				</div>
-				<div className="chip" data-value="1">
+				<div className="chip" data-value="+1">
 					<img
 						src="./img/20.png"
 						alt=""
 						onClick={() => handleAddMoney(1)}
 					/>
 				</div>
-				<div className="chip" data-value="5">
+				<div className="chip" data-value="+5">
 					<img
 						src="./img/50.png"
 						alt=""

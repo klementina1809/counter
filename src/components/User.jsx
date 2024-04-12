@@ -4,8 +4,8 @@ import { Row, Col } from "react-grid-system";
 function User({ user, currentUser, onDelete, onClick }) {
 	return (
 		<Row className="user">
-			<Col sm={2}/>
-			<Col sm={3}>
+			<Col md={2} />
+			<Col md={3} sm={6}>
 				<span
 					onClick={() => onClick(user)}
 					className={`flex text-left font-semibold ${
@@ -15,11 +15,10 @@ function User({ user, currentUser, onDelete, onClick }) {
 					{user.name}
 				</span>
 			</Col>
-			<Col sm={2}>
+			<Col md={2} sm={3}>
 				<span>{user.money}</span>
-        
 			</Col>
-			<Col sm={2}>
+			<Col md={2} sm={3}>
 				<button
 					className="px-2 my-2 border-2 rounded-md bg-red-400 text-white border-red-400 hover:bg-red-500 focus:outline-none"
 					onClick={() => onDelete(user.id)}
@@ -27,7 +26,7 @@ function User({ user, currentUser, onDelete, onClick }) {
 					x
 				</button>
 			</Col>
-			<Col sm={2} />
+			<Col md={2} />
 		</Row>
 	);
 }
