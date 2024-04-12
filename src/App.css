@@ -1,0 +1,62 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+* {
+
+  font-size: 22px;
+}
+
+form {
+	margin: auto;
+	text-align: center;
+	align-items: center;
+}
+
+.form {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+	width: 600px;
+	gap: 8px;
+	margin: auto;
+}
+.form button {
+	min-width: 120px !important;
+}
+.form .input {
+	flex: 1;
+}
+
+.chips {
+	display: flex;
+  flex-wrap: wrap;
+  width: 360px;
+	gap: 16px;
+	justify-content: space-evenly;
+  margin: auto;
+}
+
+.chip {
+	position: relative;
+  cursor: pointer;
+}
+
+.chip::after {
+	content: attr(data-value);
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	font-size: 18px;
+	color: rgb(15, 15, 15);
+	font-weight: 700;
+}
+
+.chip img {
+	display: block;
+	width: 80px;
+}
