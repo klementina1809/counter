@@ -80,21 +80,8 @@ form {
 		min-width: auto !important;
 	}
 	.chips {
-		width: auto;
+		width: 300px;
 	}
 }
 
-@media only screen and (max-width: 480px) {
-	.chip {
-		width: 90px; /* Уменьшаем размер чипов на маленьких экранах */
-	}
-	.chips {
-		gap: 8px;
-	}
-	.chip::after {
-		font-size: 20px; /* Уменьшаем размер текста значений на чипах */
-	}
-	.chip img {
-		width: 90px; /* Уменьшаем размер изображений на чипах */
-	}
-}
+
