@@ -1,12 +1,11 @@
 #root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+	max-width: 1280px;
+	margin: 0 auto;
+	padding: 2rem;
+	text-align: center;
 }
 * {
-
-  font-size: 22px;
+	font-size: 22px;
 }
 
 form {
@@ -33,16 +32,16 @@ form {
 
 .chips {
 	display: flex;
-  flex-wrap: wrap;
-  width: 360px;
+	flex-wrap: wrap;
+	width: 360px;
 	gap: 16px;
 	justify-content: space-evenly;
-  margin: auto;
+	margin: auto;
 }
 
 .chip {
 	position: relative;
-  cursor: pointer;
+	cursor: pointer;
 }
 
 .chip::after {
@@ -54,9 +53,16 @@ form {
 	font-size: 18px;
 	color: rgb(15, 15, 15);
 	font-weight: 700;
+  pointer-events: none !important;
 }
 
 .chip img {
 	display: block;
 	width: 80px;
+}
+.user {
+	display: flex;
+	align-items: center !important;
+  margin: auto;
+  cursor: pointer;
 }
