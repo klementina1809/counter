@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import useLocalStorage from "use-local-storage";
-import { Container, Row } from "react-grid-system";
+import { Container, Row, Col } from "react-grid-system";
 
 import Input from "./components/Input";
 import User from "./components/User";
@@ -67,83 +67,89 @@ function App() {
 	return (
 		<Container>
 			<Row>
-				<form onSubmit={handleAddUser}>
-					<div className="form">
-						<Input
-							name={"user"}
-							value={value}
-							onChange={(e) => handleChange(e)}
-						/>
-						<button
-							type="submit"
-							className="p-2 border-2 rounded-md font-semibold bg-red-400 text-white border-red-400 hover:bg-red-500 "
-						>
-							Add
-						</button>
-					</div>
-				</form>
+				<Col sm={12}>
+					<form onSubmit={handleAddUser}>
+						<div className="form">
+							<Input
+								name={"user"}
+								value={value}
+								onChange={(e) => handleChange(e)}
+							/>
+							<button
+								type="submit"
+								className="p-2 border-2 rounded-md font-semibold bg-red-400 text-white border-red-400 hover:bg-red-500 "
+							>
+								Add
+							</button>
+						</div>
+					</form>
+				</Col>
 			</Row>
-			<div className="users mb-4 mt-4 ">
-				{users.map((user) => (
-					<User
-						key={user.id}
-						user={user}
-						onDelete={handleDelete}
-						onClick={() => selectUser(user.id)}
-						currentUser={currentUser}
-					/>
-				))}
-			</div>
-			<div className="chips my-8">
-				<div className="chip" data-value="+0.5">
-					<img
-						src="./img/10.png"
-						alt=""
-						onClick={() => handleAddMoney(0.5)}
-					/>
-				</div>
-				<div className="chip" data-value="+1">
-					<img
-						src="./img/20.png"
-						alt=""
-						onClick={() => handleAddMoney(1)}
-					/>
-				</div>
-				<div className="chip" data-value="+5">
-					<img
-						src="./img/50.png"
-						alt=""
-						onClick={() => handleAddMoney(5)}
-					/>
-				</div>
-				<div className="chip" data-value="-0.5">
-					<img
-						src="./img/10.png"
-						alt=""
-						onClick={() => handleAddMoney(-0.5)}
-					/>
-				</div>
-				<div className="chip" data-value="-1">
-					<img
-						src="./img/20.png"
-						alt=""
-						onClick={() => handleAddMoney(-1)}
-					/>
-				</div>
-				<div className="chip" data-value="-5">
-					<img
-						src="./img/50.png"
-						alt=""
-						onClick={() => handleAddMoney(-5)}
-					/>
-				</div>
-			</div>
-			<button
-				onClick={handleClear}
-				className="p-2 border-2 rounded-md font-semibold bg-gray-400 text-white border-gray-400 hover:bg-gray-500"
-			>
-				Clear
-			</button>
+			<Row>
+				<Col sm={12}>
+					<div className="users mb-4 mt-4 ">
+						{users.map((user) => (
+							<User
+								key={user.id}
+								user={user}
+								onDelete={handleDelete}
+								onClick={() => selectUser(user.id)}
+								currentUser={currentUser}
+							/>
+						))}
+					</div>
+					<div className="chips my-8">
+						<div className="chip" data-value="+0.5">
+							<img
+								src="./img/10.png"
+								alt=""
+								onClick={() => handleAddMoney(0.5)}
+							/>
+						</div>
+						<div className="chip" data-value="+1">
+							<img
+								src="./img/20.png"
+								alt=""
+								onClick={() => handleAddMoney(1)}
+							/>
+						</div>
+						<div className="chip" data-value="+5">
+							<img
+								src="./img/50.png"
+								alt=""
+								onClick={() => handleAddMoney(5)}
+							/>
+						</div>
+						<div className="chip" data-value="-0.5">
+							<img
+								src="./img/10.png"
+								alt=""
+								onClick={() => handleAddMoney(-0.5)}
+							/>
+						</div>
+						<div className="chip" data-value="-1">
+							<img
+								src="./img/20.png"
+								alt=""
+								onClick={() => handleAddMoney(-1)}
+							/>
+						</div>
+						<div className="chip" data-value="-5">
+							<img
+								src="./img/50.png"
+								alt=""
+								onClick={() => handleAddMoney(-5)}
+							/>
+						</div>
+					</div>
+					<button
+						onClick={handleClear}
+						className="p-2 border-2 rounded-md font-semibold bg-gray-400 text-white border-gray-400 hover:bg-gray-500"
+					>
+						Clear
+					</button>
+				</Col>
+			</Row>
 		</Container>
 	);
 }
