@@ -10,7 +10,13 @@ import "./App.css";
 function App() {
 	const [currentUser, setCurrentUser] = useState(0);
 	const [value, setValue] = useState("");
-	const [users, setUsers] = useLocalStorage("users", []);
+	const [users, setUsers] = useLocalStorage("users", [
+		{ id: 1, name: "Igol", money: 0 },
+		{ id: 2, name: "Infe", money: 0 },
+		{ id: 3, name: "Dave", money: 0 },
+		{ id: 4, name: "Hani", money: 0 },
+		{ id: 5, name: "Mattia", money: 0 },
+	]);
 
 	useEffect(() => {
 		console.log("currentUser", currentUser);
