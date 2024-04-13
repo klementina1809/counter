@@ -1,33 +1,9 @@
 #root {
 	max-width: 1280px;
 	margin: 0 auto;
-	padding: 2rem;
-	text-align: center;
 }
 * {
 	font-size: 22px;
-}
-
-form {
-	margin: auto;
-	text-align: center;
-	align-items: center;
-}
-
-.form {
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
-	width: 600px;
-	gap: 8px;
-	margin: auto;
-}
-.form button {
-	min-width: 120px !important;
-}
-.form .input {
-	flex: 1;
 }
 
 .chips {
@@ -69,19 +45,7 @@ form {
 }
 
 @media only screen and (max-width: 768px) {
-	* {
-		font-size: 34px !important;
-	}
-	.form {
-		flex-direction: column;
-		max-width: 760px;
-	}
-	.form button {
-		min-width: auto !important;
-	}
 	.chips {
 		width: 300px;
 	}
 }
-
-

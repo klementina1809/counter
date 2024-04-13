@@ -27,13 +27,25 @@ function App() {
 	};
 
 	const handleDelete = (id) => {
+		if (!verifyDelete()) return;
 		const newUsers = users.filter((user) => user.id !== id);
 		setUsers(newUsers);
 	};
+
+	const verifyDelete = () => {
+		const result = window.confirm("Are you sure?");
+		return result;
+	};
 	const handleClear = () => {
+		if (!verifyClear()) return;
 		const updatedUsers = users.map((user) => ({ ...user, money: 0 }));
 		setUsers(updatedUsers);
 		console.log("cleared");
+	};
+
+	const verifyClear = () => {
+		const result = window.confirm("Are you sure?");
+		return result;
 	};
 
 	const generateId = () => {
@@ -67,37 +79,35 @@ function App() {
 	return (
 		<Container>
 			<Row>
-				<Col sm={12}>
-					<form onSubmit={handleAddUser}>
-						<div className="form">
-							<Input
-								name={"user"}
-								value={value}
-								onChange={(e) => handleChange(e)}
-							/>
-							<button
-								type="submit"
-								className="p-2 border-2 rounded-md font-semibold bg-red-400 text-white border-red-400 hover:bg-red-500 "
-							>
-								Add
-							</button>
-						</div>
-					</form>
+				<Col xs={8}>
+					<Input
+						name={"user"}
+						value={value}
+						onChange={(e) => handleChange(e)}
+					/>
+				</Col>
+				<Col xs={4}>
+					<button
+						type="submit"
+						className="p-2 border-2 rounded-md font-semibold bg-red-400 text-white border-red-400 hover:bg-red-500 "
+						onClick={handleAddUser}
+						style={{ width: "100%" }}
+					>
+						Add
+					</button>
 				</Col>
 			</Row>
-			<Row>
+			<Row className="mt-10">
 				<Col sm={12}>
-					<div className="users mb-4 mt-4 ">
-						{users.map((user) => (
-							<User
-								key={user.id}
-								user={user}
-								onDelete={handleDelete}
-								onClick={() => selectUser(user.id)}
-								currentUser={currentUser}
-							/>
-						))}
-					</div>
+					{users.map((user) => (
+						<User
+							key={user.id}
+							user={user}
+							onDelete={handleDelete}
+							onClick={() => selectUser(user.id)}
+							currentUser={currentUser}
+						/>
+					))}
 					<div className="chips my-8">
 						<div className="chip" data-value="+0.5">
 							<img
@@ -142,6 +152,10 @@ function App() {
 							/>
 						</div>
 					</div>
+				</Col>
+			</Row>
+			<Row>
+				<Col xs={12} style={{ textAlign: "center" }}>
 					<button
 						onClick={handleClear}
 						className="p-2 border-2 rounded-md font-semibold bg-gray-400 text-white border-gray-400 hover:bg-gray-500"
